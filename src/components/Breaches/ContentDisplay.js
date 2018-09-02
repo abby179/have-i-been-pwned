@@ -3,7 +3,8 @@ import { inject, observer } from 'mobx-react'
 import key from 'weak-key'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import ReactPaginate from 'react-paginate'
+// import ReactPaginate from 'react-paginate'
+import Pagination from 'react-js-pagination'
 import SortingHead from './SortingHead'
 
 const StatusIcon = (props) => {
@@ -17,10 +18,10 @@ const StatusIcon = (props) => {
 @inject('breachStore')
 @observer
 export default class ContentDisplay extends Component {
-  handlePageChange = (data) => {this.props.breachStore.setPage(data.selected)}
+  handlePageChange = (data) => {this.props.breachStore.setPage(data-1)}
 
   render() {
-    const { isLoading, displayBreachList, totalPagesCount,
+    const { isLoading, displayBreachList, totalItemsCount,
             currentPage, limit } = this.props.breachStore
 
     if (isLoading) {
@@ -67,24 +68,17 @@ export default class ContentDisplay extends Component {
 
       {
         displayBreachList.length > limit ?
-        (
-          <ReactPaginate 
-            containerClassName={"pagination justify-content-center mb-4"}
-            previousClassName={"page-item"}
-            previousLinkClassName={"page-link"}
-            nextClassName={"page-item"}
-            nextLinkClassName={"page-link"}
-            pageClassName={"page-item"}
-            pageLinkClassName={"page-link"}
-            activeClassName={"active"}
-            breakClassName={"page-item disabled"}
-            breakLabel={<a className="page-link">...</a>}
-            disabledClassName={"disabled"}
-            pageCount={totalPagesCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
-            onPageChange={this.handlePageChange}
-          />):
+          <Pagination 
+            innerClass={"pagination justify-content-center mb-4"}
+            activeLinkClass={"active"}
+            itemClass={"page-item"}
+            linkClass={"page-link"}
+            activePage={currentPage+1}
+            totalItemsCount={totalItemsCount}
+            itemsCountPerPage={limit}
+            pageRangeDisplayed={10}
+            onChange={this.handlePageChange}
+          /> :
           null
       }
       </div>

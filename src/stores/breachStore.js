@@ -45,8 +45,8 @@ class BreachStore {
     }
   }
   
-  @computed get totalPagesCount() {
-    return Math.ceil(this.displayBreachList.length / this.limit)
+  @computed get totalItemsCount() {
+    return this.displayBreachList.length
   }
 
   @action reset() {
