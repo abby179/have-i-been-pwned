@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+$theme-colors: (
+  primary: #20c997,
+);
+
+$dark: #20c997;
+
+$table-dark-bg: #20c997;
+$table-dark-border-color: #20c997;
+$table-striped-order: even;
+$table-accent-bg: rgba(#20c997, .08);
+
+$font-family-sans-serif: "Lato", sans-serif;
+
+@import "../../node_modules/bootstrap/scss/bootstrap"
