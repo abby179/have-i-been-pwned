@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
-import queryString from 'query-string'
+import qs from 'qs'
 
 import FilterControl from './FilterControl'
 import ContentDisplay from './ContentDisplay'
@@ -35,7 +35,7 @@ export default class Breaches extends Component {
 
   getDomain(props = this.props) {
     if (this.props.location.search) {
-      return queryString.parse(props.location.search).domain
+      return qs.parse(props.location.search.slice(1)).domain
     }
     return null
   }
