@@ -3,7 +3,6 @@ import { inject, observer } from 'mobx-react'
 import key from 'weak-key'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// import ReactPaginate from 'react-paginate'
 import Pagination from 'react-js-pagination'
 import SortingHead from './SortingHead'
 
