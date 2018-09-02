@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Header from './Header'
-import Account from './Account/index'
+import Account from './Account'
 import Breaches from './Breaches/index'
-import Password from './Password/index'
+import Password from './Password'
 
 class App extends Component {
   render() {

@@ -82,6 +82,7 @@ class BreachStore {
     } else {
       this.filterState[name] = true
     }
+    this.currentPage = 0
   }
 
   @action handleSortChange(sortBy) {
