@@ -5,6 +5,7 @@ import Header from './Header'
 import Account from './Account'
 import Breaches from './Breaches/index'
 import Password from './Password'
+import ErrorPage from './ErrorPage'
 
 class App extends Component {
   render() {
@@ -15,7 +16,8 @@ class App extends Component {
           <Route path="/account" component={Account}/>
           <Route path="/breaches" component={Breaches}/>
           <Route path="/password" component={Password}/>
-          <Redirect from="/" to="/account" />
+          <Redirect exact from="/" to="/account" />
+          <Route component={ErrorPage}/>
         </Switch>
       </div>
     )
