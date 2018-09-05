@@ -10,7 +10,7 @@ const CheckboxWithLabel = (props) => {
         className="custom-control-input" 
         id={id}
         name={name}
-        checked={checkedStatus} 
+        value={checkedStatus} 
         onChange={handleChange}
       />
       <label className="custom-control-label" htmlFor={id}>{label}</label>
